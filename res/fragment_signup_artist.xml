@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/signup_artist_select_container">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="50dp">
+
+            <TextView
+                style="@style/CustomTitleTextView"
+                android:id="@+id/signup_artist_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="36dp"
+                android:text="@string/string_signup_artist_title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                style="@style/CustomLabelTextView"
+                android:id="@+id/signup_artist_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/string_signup_artist_label"
+                app:layout_constraintTop_toBottomOf="@id/signup_artist_title"
+                app:layout_constraintLeft_toLeftOf="@id/signup_artist_title"/>
+
+            <TextView
+                android:id="@+id/signup_artist_ballad_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:text="@string/string_signup_artist_ballad_title"
+                android:textSize="20sp"
+                android:textColor="@color/text_dark_gray"
+                app:layout_constraintTop_toBottomOf="@id/signup_artist_label"
+                app:layout_constraintLeft_toLeftOf="@id/signup_artist_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/signup_artist_ballad_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="30dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/signup_artist_ballad_title"
+                tool:listitem="@layout/item_artist_list"/>
+
+            <TextView
+                style="@style/CustomSubTitleTextView"
+                android:id="@+id/signup_artist_pop_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:text="@string/string_signup_artist_pop_title"
+                android:textSize="20sp"
+                android:textColor="@color/text_dark_gray"
+                app:layout_constraintTop_toBottomOf="@id/signup_artist_ballad_list"
+                app:layout_constraintLeft_toLeftOf="@id/signup_artist_ballad_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/signup_artist_pop_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/signup_artist_pop_title"
+                tool:listitem="@layout/item_artist_list"/>
+
+            <TextView
+                style="@style/CustomSubTitleTextView"
+                android:id="@+id/signup_artist_hiphop_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/notosanscjkkr_regular"
+                android:text="@string/string_signup_artist_hiphop_title"
+                android:textSize="20sp"
+                android:textColor="@color/text_dark_gray"
+                app:layout_constraintTop_toBottomOf="@+id/signup_artist_pop_list"
+                app:layout_constraintLeft_toLeftOf="@id/signup_artist_title"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/signup_artist_hiphop_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="30dp"
+                android:overScrollMode="never"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/signup_artist_hiphop_title"
+                tool:listitem="@layout/item_artist_list"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/signup_artist_select_container"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/semi_white"
+        app:layout_constraintBottom_toTopOf="@id/btn_signup_artist_complete">
+
+        <TextView
+            style="@style/CustomLabelTextView"
+            android:id="@+id/signup_artist_select_nothing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="15dp"
+            android:text="@string/string_signup_artist_nothing"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/signup_artist_select_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tool:listitem="@layout/item_artist_selected"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        style="@style/CustomMainButton"
+        android:id="@+id/btn_signup_artist_complete"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/string_signup_complete"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

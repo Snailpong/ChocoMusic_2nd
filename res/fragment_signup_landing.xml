@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background_gradient_main_color">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/signup_landing_guide_horizontal_50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
+
+    <TextView
+        android:id="@+id/signup_landing_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:fontFamily="@font/notosanscjkkr_bold"
+        android:text="위뮤즈에 오신 것을\n환영합니다!"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:shadowColor="@color/gray"
+        android:shadowDy="3.0"
+        android:shadowRadius="6.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/signup_landing_label"/>
+
+    <TextView
+        android:id="@+id/signup_landing_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/notosanscjkkr_medium"
+        android:text="위뮤즈의 다양한 뮤지션들과 무대가\n회원님을 기다리고 있습니다!\n활동을 위한 정보를 입력하세요."
+        android:textColor="@color/white"
+        android:shadowColor="@color/gray"
+        android:shadowDy="3.0"
+        android:shadowRadius="6.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/signup_landing_guide_horizontal_50"/>
+
+    <Button
+        style="@style/CustomMainButton"
+        android:id="@+id/btn_signup_landing_next"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/white"
+        android:text="추가정보 입력하기"
+        android:textColor="@color/main_color"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

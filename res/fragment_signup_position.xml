@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="30dp"
+    android:layout_marginEnd="30dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        style="@style/CustomTitleTextView"
+        android:id="@+id/signup_position_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/signup_position_string_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        style="@style/CustomSubTitleTextView"
+        android:id="@+id/signup_position_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/signup_position_string_label"
+        app:layout_constraintTop_toBottomOf="@+id/signup_position_title"
+        app:layout_constraintLeft_toLeftOf="@+id/signup_position_title"/>
+
+    <TextView
+        style="@style/CustomLabelTextView"
+        android:id="@+id/signup_position_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/string_genre_position_hint"
+        app:layout_constraintLeft_toLeftOf="@+id/signup_position_title"
+        app:layout_constraintTop_toBottomOf="@+id/signup_position_label"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/signup_position_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signup_position_hint"
+        app:layout_constraintBottom_toTopOf="@+id/btn_signup_position_complete"
+        tools:listitem="@layout/item_genre_position"/>
+
+    <Button
+        style="@style/CustomMainButton"
+        android:id="@+id/btn_signup_position_complete"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/string_next"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
